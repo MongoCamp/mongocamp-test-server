@@ -12,7 +12,7 @@ import sttp.client3.{Identity, RequestT, Response, ResponseException}
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
 
-class BaseSuite extends munit.FunSuite {
+class MongoCampBaseServerSuite extends munit.FunSuite {
 
   private var _adminBearerToken: String = ""
   def clearAdminToken                   = _adminBearerToken = ""
