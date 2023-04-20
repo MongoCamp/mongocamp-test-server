@@ -1,5 +1,8 @@
 package dev.mongocamp.server.test
 
+import better.files.File
+import com.typesafe.scalalogging.LazyLogging
+import dev.mongocamp.server.ActorHandler
 import dev.mongocamp.server.test.client.api.InformationApi
 
 import scala.concurrent.duration.DurationInt

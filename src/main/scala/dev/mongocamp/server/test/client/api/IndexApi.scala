@@ -16,6 +16,7 @@ import dev.mongocamp.server.test.client.core.JsonSupport._
 import dev.mongocamp.server.test.client.model._
 import sttp.client3._
 import sttp.model.Method
+import dev.mongocamp.server.converter.CirceSchema
 
 object IndexApi {
 

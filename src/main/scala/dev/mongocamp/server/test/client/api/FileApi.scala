@@ -14,6 +14,7 @@ import sttp.model.Method
 
 import java.io.File
 import scala.collection.Seq
+import dev.mongocamp.server.converter.CirceSchema
 
 object FileApi {
 

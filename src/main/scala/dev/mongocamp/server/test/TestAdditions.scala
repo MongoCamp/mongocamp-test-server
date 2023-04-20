@@ -1,11 +1,23 @@
 package dev.mongocamp.server.test
 
+import better.files.{File, Resource}
+import dev.mongocamp.driver.mongodb._
+import dev.mongocamp.server.auth.{AuthHolder, MongoAuthHolder}
 import sttp.capabilities
 import sttp.client3.SttpBackend
 
 import scala.collection.mutable
 import scala.concurrent.Future
 import scala.util.Random
+import dev.mongocamp.server.converter.CirceSchema
+import dev.mongocamp.server.database.{JobDao, MongoDatabase}
+import dev.mongocamp.server.model.JobConfig
+import dev.mongocamp.server.model.auth.{Grant, Role, UserInformation}
+import dev.mongocamp.server.plugin.JobPlugin
+import dev.mongocamp.server.service.SystemFileService
+import org.joda.time.DateTime
+import sttp.capabilities.akka.AkkaStreams
+import sttp.client3.akkahttp.AkkaHttpBackend
 
 object TestAdditions extends CirceSchema {
 

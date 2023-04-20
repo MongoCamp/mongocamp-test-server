@@ -11,6 +11,8 @@
  */
 package dev.mongocamp.server.test.client.model
 
+import org.joda.time.DateTime
+
 case class JobInformation(
     name: String,
     group: String,

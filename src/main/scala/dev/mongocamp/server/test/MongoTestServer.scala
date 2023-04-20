@@ -1,6 +1,8 @@
 package dev.mongocamp.server.test
 
 
+import better.files.File
+import com.typesafe.scalalogging.LazyLogging
 import de.flapdoodle.embed.mongo.config.Net
 import de.flapdoodle.embed.mongo.distribution.Version
 import de.flapdoodle.embed.mongo.transitions.{Mongod, RunningMongodProcess}

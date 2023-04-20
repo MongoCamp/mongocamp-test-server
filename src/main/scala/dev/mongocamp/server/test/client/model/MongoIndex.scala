@@ -11,6 +11,8 @@
  */
 package dev.mongocamp.server.test.client.model
 
+import org.joda.time.DateTime
+
 case class MongoIndex(
     name: String,
     fields: Seq[String],
