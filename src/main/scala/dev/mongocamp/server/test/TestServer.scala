@@ -6,13 +6,13 @@ import dev.mongocamp.server.ActorHandler
 import dev.mongocamp.server.test.client.api.InformationApi
 
 import scala.concurrent.duration.DurationInt
-import scala.concurrent.{Await, ExecutionContext, Future}
+import scala.concurrent.{ Await, ExecutionContext, Future }
 import scala.util.Random
 
 object TestServer extends LazyLogging {
   implicit val ex: ExecutionContext = ActorHandler.requestExecutionContext
 
-  private var serverRunning = false
+  private var serverRunning      = false
   private var mongoServerStarted = false
 
   System.setProperty("CONNECTION_HOST", "localhost")
@@ -32,8 +32,8 @@ object TestServer extends LazyLogging {
         }
         mongoServerStarted = true
       }
-      val versionRequest = InformationApi().version()
-      val versionFuture = TestAdditions.backend.send(versionRequest)
+      val versionRequest  = InformationApi().version()
+      val versionFuture   = TestAdditions.backend.send(versionRequest)
       val versionResponse = Await.result(versionFuture, 1.seconds)
       versionResponse.body.getOrElse(throw new Exception("error"))
       serverRunning = true

@@ -1,11 +1,10 @@
 package dev.mongocamp.server.test
 
-
 import better.files.File
 import com.typesafe.scalalogging.LazyLogging
 import de.flapdoodle.embed.mongo.config.Net
 import de.flapdoodle.embed.mongo.distribution.Version
-import de.flapdoodle.embed.mongo.transitions.{Mongod, RunningMongodProcess}
+import de.flapdoodle.embed.mongo.transitions.{ Mongod, RunningMongodProcess }
 import de.flapdoodle.embed.mongo.types.DatabaseDir
 import de.flapdoodle.embed.process.io.ProcessOutput
 import de.flapdoodle.reverse.TransitionWalker
@@ -36,7 +35,8 @@ object MongoTestServer extends LazyLogging {
   private var tempDir = File.newTemporaryDirectory()
 
   private def initMonoExecutable: Mongod = {
-    val mongod = Mongod.builder()
+    val mongod = Mongod
+      .builder()
       .net(Start.to(classOf[Net]).providedBy(() => Net.builder().port(mongoPort).bindIp(Net.defaults().getBindIp).isIpv6(true).build()))
       .databaseDir(Start.to(classOf[DatabaseDir]).providedBy(() => DatabaseDir.of(tempDir.path)))
       .processOutput(Start.to(classOf[ProcessOutput]).providedBy(() => ProcessOutput.silent()))
@@ -49,15 +49,16 @@ object MongoTestServer extends LazyLogging {
   def checkForLocalRunningMongoDb(): Unit = {
     if (!running) {
       try {
-        val checkRequest = basicRequest.method(Method.GET, uri"http://localhost:4711").response(asString)
-        val resultFuture = TestAdditions.backend.send(checkRequest)
+        val checkRequest   = basicRequest.method(Method.GET, uri"http://localhost:4711").response(asString)
+        val resultFuture   = TestAdditions.backend.send(checkRequest)
         val responseResult = Await.result(resultFuture, 1.seconds).body.getOrElse("not found")
         if (responseResult.contains("HTTP on the native driver port.")) {
           println("Use local running MongoDb")
           System.setProperty("CONNECTION_PORT", "4711")
           running = true
         }
-      } catch {
+      }
+      catch {
         case e: Exception =>
           e.getMessage
       }

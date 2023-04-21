@@ -5,9 +5,9 @@ import dev.mongocamp.server.config.DefaultConfigurations
 import dev.mongocamp.server.database.MongoDatabase
 import dev.mongocamp.server.service.ConfigurationService
 import dev.mongocamp.server.test.client.api.AuthApi
-import dev.mongocamp.server.test.client.model.{Login, LoginResult}
+import dev.mongocamp.server.test.client.model.{ Login, LoginResult }
 import io.circe
-import sttp.client3.{Identity, RequestT, Response, ResponseException}
+import sttp.client3.{ Identity, RequestT, Response, ResponseException }
 
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt

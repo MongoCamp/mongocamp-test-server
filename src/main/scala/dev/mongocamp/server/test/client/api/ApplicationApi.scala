@@ -22,7 +22,6 @@ object ApplicationApi {
 
 class ApplicationApi(baseUrl: String) extends CirceSchema {
 
-
   /** Get Configuration for key
     *
     * Expected answers: code 200 : MongoCampConfiguration () code 0 : ErrorDescription () Headers : x-error-code - Error Code x-error-message - Message of the
@@ -62,7 +61,6 @@ class ApplicationApi(baseUrl: String) extends CirceSchema {
       .header("X-AUTH-APIKEY", apiKey)
       .response(asJson[Seq[MongoCampConfiguration]])
 
-
   /** Returns the Settings of the running MongoCamp Application.
     *
     * Expected answers: code 200 : SettingsResponse () code 0 : ErrorDescription () Headers : x-error-code - Error Code x-error-message - Message of the
@@ -80,7 +78,6 @@ class ApplicationApi(baseUrl: String) extends CirceSchema {
       .bearer(bearerToken)
       .header("X-AUTH-APIKEY", apiKey)
       .response(asJson[SettingsResponse])
-
 
   /** Update Configuration with the value
     *
@@ -105,8 +102,6 @@ class ApplicationApi(baseUrl: String) extends CirceSchema {
       .body(jsonValueAny)
       .response(asJson[JsonValueBoolean])
   }
-
-
 
   //  /** Returns the JVM Metrics of the running MongoCamp Application
   //    *

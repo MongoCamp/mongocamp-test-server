@@ -13,7 +13,7 @@ import dev.mongocamp.server.test.client.model._
 import sttp.client3._
 import sttp.model.Method
 
-object AdminApi  extends CirceSchema{
+object AdminApi extends CirceSchema {
   def apply(baseUrl: String = TestServer.serverBaseUrl) = new AdminApi(baseUrl)
 }
 
