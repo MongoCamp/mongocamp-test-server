@@ -16,14 +16,14 @@ IntegrationTest / parallelExecution := false
 
 Test / scalacOptions ++= Seq("-Yrangepos")
 
-libraryDependencies += "dev.mongocamp" %% "mongocamp-server" % "1.4.1" % Provided
+libraryDependencies += "dev.mongocamp" %% "mongocamp-server" % "1.4.2" % Provided
 
 libraryDependencies += "org.scalameta" %% "munit" % "0.7.29"
 
-libraryDependencies += "de.flapdoodle.embed" % "de.flapdoodle.embed.mongo" % "4.6.2"
+libraryDependencies += "de.flapdoodle.embed" % "de.flapdoodle.embed.mongo" % "4.6.3"
 
 val circeVersion     = "0.14.5"
-val sttClientVersion = "3.8.14"
+val sttClientVersion = "3.8.15"
 
 libraryDependencies += "com.softwaremill.sttp.client3" %% "circe"             % sttClientVersion
 libraryDependencies += "io.circe"                      %% "circe-core"        % circeVersion

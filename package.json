@@ -1,7 +1,7 @@
 {
   "organization" : "dev.mongocamp",
   "name" : "mongocamp-test-server",
-  "version" : "0.5.1.snapshot",
+  "version" : "0.5.1",
   "description" : "",
   "scripts" : {
     "docs:build" : "pnpm docs:external; vitepress build docs",
