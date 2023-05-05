@@ -1,4 +1,11 @@
-## 0.5.0 (2023-04-21)
+## [0.5.1]() (2023-05-05)
+
+
+### Features
+
+* dependency update mongocamp server ([e19c6f6](https://github.com/MongoCamp/mongocamp-test-server/commit/e19c6f68149c2e9c281846125493421da27ec3db))
+
+## [0.5.0]() (2023-04-21)
 
 
 ### Features
